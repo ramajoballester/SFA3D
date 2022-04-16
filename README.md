@@ -1,6 +1,6 @@
 # Super Fast and Accurate 3D Object Detection based on 3D LiDAR Point Clouds
 
-[![python3.9]][python-url]
+[![python-image]][python-url]
 [![pytorch-image]][pytorch-url]
 
 ---
