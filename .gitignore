@@ -5,6 +5,10 @@ checkpoints/
 logs/
 src/.idea/
 
+ros/.catkin_workspace
+ros/devel
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

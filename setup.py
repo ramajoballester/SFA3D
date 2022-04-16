@@ -18,10 +18,16 @@ REQUIRES_PYTHON = '>=3.6.0'
 VERSION = '0.1.0'
 
 # What packages are required for this module to be executed?
+# REQUIRED = [
+#     'torch==1.5.0', 'torchvision==0.6.0', 'easydict==1.9',
+#     'opencv-python==4.2.0.34', 'numpy==1.18.3', 'torchsummary==1.5.1',
+#     'tensorboard==2.2.1', 'scikit-learn==0.22.2', 'wget==3.2'
+# ]
+
 REQUIRED = [
-    'torch==1.5.0', 'torchvision==0.6.0', 'easydict==1.9', 
-    'opencv-python==4.2.0.34', 'numpy==1.18.3', 'torchsummary==1.5.1',
-    'tensorboard==2.2.1', 'scikit-learn==0.22.2', 'wget==3.2'
+    'torch', 'torchvision', 'easydict',
+    'opencv-python', 'numpy', 'torchsummary',
+    'tensorboard', 'scikit-learn', 'wget'
 ]
 
 # What packages are optional?
