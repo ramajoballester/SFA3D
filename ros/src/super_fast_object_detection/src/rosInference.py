@@ -87,7 +87,7 @@ def on_scan(scan):
 
                 obj.score = 0.9
                 obj.pose_reliable = True
-                
+
                 obj.space_frame = scan.header.frame_id
                 obj.label = class_name
                 obj.score = _score
@@ -99,24 +99,24 @@ def on_scan(scan):
                 obj.pose.orientation.y = qy
                 obj.pose.orientation.z = qz
                 obj.pose.orientation.w = qw
-                
+
                 obj.dimensions.x = l
                 obj.dimensions.y = w
                 obj.dimensions.z = _h
                 objects_msg.objects.append(obj)
     if flag is True:
         pub.publish(objects_msg)
-        
+
     stop = timeit.default_timer()
     print('Time: ', stop - start)
-    
+
 
 
 if __name__ == '__main__':
     rospack = rospkg.RosPack()
     package_path = rospack.get_path('super_fast_object_detection')
     configs = parse_demo_configs()
-    configs.pretrained_path = package_path + '/checkpoints/fpn_resnet_18/fpn_resnet_18_epoch_300.pth'
+    # configs.pretrained_path = package_path + '/checkpoints/fpn_resnet_18/fpn_resnet_18_epoch_300.pth'
     model = create_model(configs)
     print('\n\n' + '-*=' * 30 + '\n\n')
     assert os.path.isfile(configs.pretrained_path), "No file at {}".format(configs.pretrained_path)
@@ -125,7 +125,7 @@ if __name__ == '__main__':
     configs.device = torch.device('cpu' if configs.no_cuda else 'cuda:{}'.format(configs.gpu_idx))
     model = model.to(device=configs.device)
     model.eval()
-    
+
 
     print("Started Node")
     rospy.init_node('SuperFastObjectDetection', anonymous=True)

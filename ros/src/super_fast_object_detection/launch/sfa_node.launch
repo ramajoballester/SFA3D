@@ -1,0 +1,5 @@
+<launch>
+    <node name="sfa_node" pkg="super_fast_object_detection" type="rosInference.py"
+        args="--pretrained_path $(find super_fast_object_detection)/../../../checkpoints/fpn_resnet_18/fpn_resnet_18_epoch_300.pth">
+    </node>
+</launch>
